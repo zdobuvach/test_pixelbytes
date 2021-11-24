@@ -1,0 +1,4 @@
+# git rm -r --cached nbproject/    - Удалите nbproject/ из локального отслеживания git, но сохраните ее на диске. 
+nbproject/
+.~*
+config/pass.php
