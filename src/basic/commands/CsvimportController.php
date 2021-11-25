@@ -25,13 +25,13 @@ class CsvimportController extends Controller {
         return ExitCode::OK;
     }
 
-    public function actionImport($message = 'import') {
+    public function actionImport($message = 'import', $filename = "import.csv") {
 
         echo $message . "\n";
 
         $row = 0;
         ini_set("auto_detect_line_endings", true);
-        if (($handle = fopen("import.csv", "r")) !== FALSE) {
+        if (($handle = fopen($filename, "r")) !== FALSE) {
             while (($data = fgetcsv($handle, 2000, ",")) !== FALSE) {
                 $num = count($data);
 

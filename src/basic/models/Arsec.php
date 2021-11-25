@@ -12,7 +12,7 @@ use yii\db\ActiveRecord;
 
 //use yii;
 
-class Arsec extends ActiveRecord {
+class Arsec extends SetPrimaryKey {
     
     
 }

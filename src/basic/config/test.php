@@ -36,6 +36,7 @@ return [
                                 ['class' => 'yii\web\UrlRule', 'pattern' => '/', 'route' => 'site/index'],
                                 ['class' => 'yii\web\UrlRule', 'pattern' => '/site/<action:>', 'route' => 'site/<action>'],
                                 ['class' => 'yii\web\UrlRule', 'pattern' => '/create/<action:>', 'route' => 'create/<action>'],
+                                ['class' => 'yii\web\UrlRule', 'pattern' => '/arsec/<action:>', 'route' => 'arsec/<action>',],
                             ],
                         ],
         'user' => [
