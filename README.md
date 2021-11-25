@@ -36,13 +36,13 @@ http://localhost:808/arsec/index - seems to be working incorrectly
 
 ## done
 
-### db
+### db tables
 
-article, section
+testYii.article, testYii.section
 
 ### db view
 
-arsec
+testYii.arsec
 
 ### Yii
 
