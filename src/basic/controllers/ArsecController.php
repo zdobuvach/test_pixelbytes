@@ -2,9 +2,7 @@
 
 namespace app\controllers;
 
-use Yii;
 use yii\web\Controller;
-use yii\data\Pagination;
 use app\models\Arsec;
 
 class ArsecController extends Controller {
@@ -22,7 +20,7 @@ class ArsecController extends Controller {
          * */
 
         /* Crooked but works */
-        $arsec = Yii::$app->db->createCommand('SELECT A.* FROM (SELECT * FROM arsec order by created DESC limit 500) AS A GROUP BY A.section_id order by created DESC limit 10')->queryAll();
+        $arsec = Arsec::getLast();
 
         return $this->render('index', [
                     'arsec' => $arsec                    

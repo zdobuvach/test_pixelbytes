@@ -10,9 +10,12 @@ namespace app\models;
 
 use yii\db\ActiveRecord;
 
-//use yii;
+use Yii;
 
 class Arsec extends SetPrimaryKey {
-    
-    
+
+    static public function getLast($limit = 10) {
+        return Yii::$app->db->createCommand('SELECT A.* FROM (SELECT * FROM arsec order by created DESC limit 500) AS A GROUP BY A.section_id order by created DESC limit ' . $limit)->queryAll();
+    }
+
 }
