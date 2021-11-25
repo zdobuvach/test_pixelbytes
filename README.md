@@ -32,7 +32,7 @@ yii csvimport/import
 
 ### run webpage 10 latest articles
 
-http://localhost:808/arsec/index - seems to be working incorrectly
+http://localhost:808/arsec/index
 
 ## done
 

@@ -19,20 +19,20 @@ $this->params['breadcrumbs'][] = $this->title;
     <tbody>       
             <?php foreach ($arsec as $as): ?>
             <tr>
-                <th scope='row'>
-                <?= Html::encode("{$as->id}") ?>
+                <th scope='row'>                    
+                <?= Html::encode("{$as['id']}") ?>
                 </th>
                         <td>
-                            <?= Html::encode("{$as->section_id}") ?>
+                            <?= Html::encode("{$as['section_id']}") ?>
                             </td>
         <td>
-            <?= Html::encode("{$as->section_name}") ?>
+            <?= Html::encode("{$as['section_name']}") ?>
         </td>
         <td>
-            <?= Html::encode("{$as->title}") ?>
+            <?= Html::encode("{$as['title']}") ?>
         </td>
         <td>
-            <?= Html::encode("{$as->created}") ?>
+            <?= Html::encode("{$as['created']}") ?>
         </td>
                        
             </tr>

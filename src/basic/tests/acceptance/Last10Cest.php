@@ -8,7 +8,7 @@ class Last10Cest
     {
         $I->amOnPage(Url::toRoute('/arsec/index'));        
         $I->see('Articles', 'h1');
-        $I->see('8899', 'th');
-        $I->see('8658', 'th');
+        $I->see('19112', 'th');
+        $I->see('10318 ', 'th');
     }
 }
