@@ -1,7 +1,8 @@
 <?php
 
 use yii\helpers\Html;
-use yii\widgets\LinkPager;
+use yii\grid\GridView;
+use yii\data\ArrayDataProvider;
 
 $this->title = 'Articles';
 $this->params['breadcrumbs'][] = $this->title;
@@ -17,25 +18,54 @@ $this->params['breadcrumbs'][] = $this->title;
         </tr>    
     </thead>
     <tbody>       
-            <?php foreach ($arsec as $as): ?>
+        <?php foreach ($arsec as $as): ?>
             <tr>
                 <th scope='row'>                    
-                <?= Html::encode("{$as['id']}") ?>
+                    <?= Html::encode("{$as['id']}") ?>
                 </th>
-                        <td>
-                            <?= Html::encode("{$as['section_id']}") ?>
-                            </td>
-        <td>
-            <?= Html::encode("{$as['section_name']}") ?>
-        </td>
-        <td>
-            <?= Html::encode("{$as['title']}") ?>
-        </td>
-        <td>
-            <?= Html::encode("{$as['created']}") ?>
-        </td>
-                       
+                <td>
+                    <?= Html::encode("{$as['section_id']}") ?>
+                </td>
+                <td>
+                    <?= Html::encode("{$as['section_name']}") ?>
+                </td>
+                <td>
+                    <?= Html::encode("{$as['title']}") ?>
+                </td>
+                <td>
+                    <?= Html::encode("{$as['created']}") ?>
+                </td>
+
             </tr>
-<?php endforeach; ?>
+        <?php endforeach; ?>
     </tbody>
 </table>
+<h2>Version widget</h2>
+<?php
+
+$provider = new ArrayDataProvider([
+    'allModels' => $arsec,
+    'sort' => [
+        'attributes' => ['id',
+        'section_id',
+        'section_name',
+        'title',
+        'created'],
+    ],
+    'pagination' => [
+        'pageSize' => 10,
+    ],
+]);
+
+echo GridView::widget([
+    'dataProvider' => $provider,
+    'columns' => [
+        ['class' => 'yii\grid\SerialColumn'],        
+        'id',
+        'section_id',
+        'section_name',
+        'title',
+        'created',        
+    ],
+]);
+?>
